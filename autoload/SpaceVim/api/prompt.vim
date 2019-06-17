@@ -69,6 +69,7 @@ function! s:self._getchar(...) abort
   return (type(ret) == type(0) ? nr2char(ret) : ret)
 endfunction
 
+
 func! s:self._handle_input(...) abort
   let begin = get(a:000, 0, '')
   if !empty(begin)

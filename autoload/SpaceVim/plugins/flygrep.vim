@@ -609,6 +609,7 @@ function! SpaceVim#plugins#flygrep#open(agrv) abort
           \ 'col': 0
           \ })
   else
+    " noautocmd botright split __flygrep__
     noautocmd rightbelow split __flygrep__
     let s:flygrep_win_id = win_getid()
   endif

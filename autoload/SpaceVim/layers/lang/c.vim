@@ -209,6 +209,7 @@ endfunction
 
 
 function! s:update_clang_flag() abort
+  " echo expand("%:p:h")
   if filereadable('.clang')
     let argvs = readfile('.clang')
     call s:update_checkers_argv(argvs, ['c', 'cpp'])
@@ -270,7 +271,8 @@ endfunction
 
 function! s:go_to_def() abort
   if !SpaceVim#layers#lsp#check_filetype(&ft)
-    execute "norm! g\<c-]>"
+    " execute "norm! g\<c-]>"
+    execute "YcmCompleter GoToDefinitionElseDeclaration"
   else
     call SpaceVim#lsp#go_to_def()
   endif
